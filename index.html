@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Text Summarizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-compress-alt"></i>
+                    <h1>Micro Text Summarizer</h1>
+                </div>
+                <p class="subtitle">Transform lengthy text into concise summaries instantly</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="summarizer-card">
+                <div class="input-section">
+                    <label for="textInput" class="input-label">
+                        <i class="fas fa-edit"></i>
+                        Enter your text to summarize
+                    </label>
+                    <textarea 
+                        id="textInput" 
+                        placeholder="Paste or type your text here. The summarizer will extract the most important sentences to create a concise summary..."
+                        rows="8"
+                    ></textarea>
+                    <div class="input-controls">
+                        <div class="sentence-control">
+                            <label for="sentenceCount">Summary length:</label>
+                            <select id="sentenceCount">
+                                <option value="1">1 sentence</option>
+                                <option value="2">2 sentences</option>
+                                <option value="3">3 sentences</option>
+                                <option value="4">4 sentences</option>
+                                <option value="5">5 sentences</option>
+                            </select>
+                        </div>
+                        <button id="summarizeBtn" class="summarize-btn">
+                            <i class="fas fa-magic"></i>
+                            Summarize
+                        </button>
+                    </div>
+                </div>
+
+                <div class="output-section" id="outputSection" style="display: none;">
+                    <div class="output-header">
+                        <h3><i class="fas fa-lightbulb"></i> Summary</h3>
+                        <div class="stats" id="stats"></div>
+                    </div>
+                    <div class="summary-output" id="summaryOutput"></div>
+                    <div class="output-actions">
+                        <button id="copyBtn" class="action-btn">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
+                        <button id="clearBtn" class="action-btn secondary">
+                            <i class="fas fa-trash"></i>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing and summarizing your text...</p>
+                </div>
+
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="errorText"></span>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Lightning Fast</h3>
+                    <p>Get instant summaries without waiting for complex AI models</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Privacy First</h3>
+                    <p>Your text is processed locally without external API calls</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Customizable</h3>
+                    <p>Choose the length of your summary to fit your needs</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Micro Text Summarizer. Built with custom algorithms.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
